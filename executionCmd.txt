@@ -1,0 +1,3 @@
+for running MPI files: 
+1. mpicc -o exp1 ./exp1.c
+2. mpirun -np 4 ./exp1   (-np flag means how many processors do you want to use to execute the program)
