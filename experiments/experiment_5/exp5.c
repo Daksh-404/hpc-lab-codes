@@ -3,14 +3,13 @@
 #include<stdlib.h> 
 #include<signal.h> 
 #include<pthread.h>
-int data[200];
 
+int data[200];
 void * ThreadFunction(void *num) 
-{   
+{ 
     data[1] = 0;
     data[2] = 1;
     int n = *((int *)num); 
-
     if (n > 2) 
     {
         for (int i = 3; i <= n; i++) 
@@ -19,8 +18,9 @@ void * ThreadFunction(void *num)
         } 
     }
     
-    pthread_detach(pthread_self()); pthread_exit(NULL);
-}
+    return NULL;
+}   
+
 int main(int argc, char *argv[]) 
 {
     if (argc != 2) 
@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
 
     int n = atoi(argv[1]);
     pthread_t ptid;
-
     printf("Creating fibonacci series till %d th element! \n", n);
     pthread_create(&ptid, NULL, &ThreadFunction, &n);
     pthread_join(ptid, NULL);

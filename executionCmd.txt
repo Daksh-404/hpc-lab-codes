@@ -1,3 +1,11 @@
 for running MPI files: 
 1. mpicc -o exp1 ./exp1.c
 2. mpirun -np 4 ./exp1   (-np flag means how many processors do you want to use to execute the program)
+
+for running openMP files:
+1. clang -Xpreprocessor -fopenmp test.c -lomp
+2. ./a.out argument
+
+for running pthread files
+1. gcc -lpthread test.c
+2. ./a.out argument

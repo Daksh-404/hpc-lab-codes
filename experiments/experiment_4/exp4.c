@@ -1,3 +1,4 @@
+
 #include<stdio.h> 
 #include "mpi.h"
 
@@ -128,7 +129,7 @@ void printArray()
     {
         printf("\n");
         for (j = 0; j < NUM_COLUMNS_B; j++) 
-            printf("%8.2f ", result[i][j]);
+        printf("%8.2f ", result[i][j]);
     }
     printf("\n\n");
 }
